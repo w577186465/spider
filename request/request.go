@@ -27,7 +27,7 @@ type Request struct {
 	Data        url.Values
 }
 
-func TryDocument(request *Request) (*goquery.Document, error) {
+func NewDocument(request *Request) (*goquery.Document, error) {
 	r := *request
 	res, err := TryNewRequest(request)
 	if err != nil {
@@ -123,7 +123,7 @@ func TryNewRequest(request *Request) (*http.Response, error) {
 }
 
 // 请求json
-func TryJson(request *Request) (*simplejson.Json, error) {
+func NewJson(request *Request) (*simplejson.Json, error) {
 	r := *request
 
 	// 尝试次数
